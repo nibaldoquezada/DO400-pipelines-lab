@@ -14,7 +14,16 @@ pipeline {
 
                  parallel {
 
-                      ...output omitted...
+                      stage('Unit tests') {
+
+                           steps {
+
+                                sh './mvnw test -D testGroups=unit'
+
+                           }
+
+                      }
+
 
                        stage('Integration tests') {
 
